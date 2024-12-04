@@ -1,0 +1,17 @@
+spring:
+  kafka:
+    consumer:
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id: midas
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+server:
+  port: 33400
+general:
+  kafka-topic: "transaction"
+  incentive-api-url: "http://localhost:8080/incentive"
